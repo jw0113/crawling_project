@@ -9,16 +9,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
-def load():
-    data_file = pd.read_excel("C:\\Users\\jiwoo\\Desktop\\university\\crawling_data\\final_data.xlsx",encoding="utf-8")
-    data_file = data_file.fillna(0)
-    data_file.head()
-    
-
 
 def main():
 
-    load()
     
     # spring과의 소켓 통신을 위함
     host = "127.0.0.1"
@@ -32,6 +25,8 @@ def main():
     print("Connected by", addr)
 
     # spring에서 보낸 정보 받기
+    data = client_sock.recv(2048)
+    print(data)
     
 
 if __name__ == "__main__":

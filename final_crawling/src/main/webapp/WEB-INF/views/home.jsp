@@ -163,7 +163,7 @@
         				<div class="d-flex h-100 text-white-50">
         					<form action="/finalcrawling/dataget" method="post">
         						1. 여행 일자<br>
-        						<input type="text" id="startDate" name = 'startDay'> <input type="text" id="endDate" name = 'endDay'>
+        						<input type="text" id="startDate" name = 'startDate'> <input type="text" id="endDate" name = 'endDate'>
         						<br><br>
         						2. 여행지 선택시 가장 중요시 생각하는 것<br>
         						<input type='checkbox' name='importA2' value = 1 onclick='checkOnlyOne1(this)'>여행지 지명도<br>
