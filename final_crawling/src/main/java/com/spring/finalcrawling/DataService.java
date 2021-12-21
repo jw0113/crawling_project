@@ -39,24 +39,18 @@ public class DataService implements IDataService {
 			bufferout.write(data.getBytes());
 			bufferout.flush();
 			
-			String deob_read = "";
+			String python_result = "";
 			while(true) {
-
-				
-				if (bufferin.read() == 1) {
-										
-				}
-				
 				
 				if (bufferin.read() > 0) {
 					byte[] in = new byte[9999];
-					deob_read += new String(in,0,bufferin.read(in));
+					python_result += new String(in,0,bufferin.read(in));
 					
 						
 				}
+				
 				// server에서 모든 코드를 보냈다면 while문 종료
 				if (bufferin.read() <0) {
-					
 					break;
 				}
 			}
@@ -64,7 +58,8 @@ public class DataService implements IDataService {
 			bufferout.close();
 			bufferin.close();
 			socket.close();
-			return deob_read;
+			
+			return python_result;
 
 		} catch (Exception e) {
 			System.out.println("Connect Fail");
