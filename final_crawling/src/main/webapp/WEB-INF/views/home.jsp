@@ -183,12 +183,12 @@
         						<input type='checkbox' name='importA2' value = 15 onclick='checkOnlyOne1(this)'>기타<br>
         						<br>
         						3. 원하는 여행 유형<br>
-        						<input type='checkbox' name='playA3' value = 1 onclick='checkOnlyOne2(this)'>자연 및 풍경 감상(힐링)<br>
-        						<input type='checkbox' name='playA3' value = 2 onclick='checkOnlyOne2(this)'>음식 관광<br>
-        						<input type='checkbox' name='playA3' value = 3 onclick='checkOnlyOne2(this)'>야외활동<br>
-        						<input type='checkbox' name='playA3' value = 8 onclick='checkOnlyOne2(this)'>쇼핑<br>
-        						<input type='checkbox' name='playA3' value = 9 onclick='checkOnlyOne2(this)'>지역 문화 예술 및 공연/콘서트/전시 관람<br>
-        						<input type='checkbox' name='playA3' value = 11 onclick='checkOnlyOne2(this)'>지역 축제 및 이벤트 참가<br>
+        						<input type='checkbox' name='playA3_1' value = 1 onclick='checkOnlyOne2(this)'>자연 및 풍경 감상(힐링)<br>
+        						<input type='checkbox' name='playA3_2' value = 2 onclick='checkOnlyOne2(this)'>음식 관광<br>
+        						<input type='checkbox' name='playA3_3' value = 3 onclick='checkOnlyOne2(this)'>야외활동<br>
+        						<input type='checkbox' name='playA3_8' value = 8 onclick='checkOnlyOne2(this)'>쇼핑<br>
+        						<input type='checkbox' name='playA3_9' value = 9 onclick='checkOnlyOne2(this)'>지역 문화 예술 및 공연/콘서트/전시 관람<br>
+        						<input type='checkbox' name='playA3_11' value = 11 onclick='checkOnlyOne2(this)'>지역 축제 및 이벤트 참가<br>
         						<br>
         						4. 주요 이동 교통 수단<br>
         						<input type='checkbox' name='trafficA5' value = 1 onclick='checkOnlyOne3(this)'>자가용<br>
@@ -203,22 +203,22 @@
         						<input type='checkbox' name='trafficA5' value = 11 onclick='checkOnlyOne3(this)'>기타<br>
         						<br>
         						5. 숙박 시설<br>
-        						<input type='checkbox' name='sleepA6' value = 1 onclick='checkOnlyOne4(this)'>호텔<br>
-        						<input type='checkbox' name='sleepA6' value = 3 onclick='checkOnlyOne4(this)'>펜션<br>
-        						<input type='checkbox' name='sleepA6' value = 4 onclick='checkOnlyOne4(this)'>콘도미니엄/리조트<br>
-        						<input type='checkbox' name='sleepA6' value = 9 onclick='checkOnlyOne4(this)'>게스트하우스<br>
+        						<input type='checkbox' name='sleepA6_1' value = 1 onclick='checkOnlyOne4(this)'>호텔<br>
+        						<input type='checkbox' name='sleepA6_3' value = 3 onclick='checkOnlyOne4(this)'>펜션<br>
+        						<input type='checkbox' name='sleepA6_4' value = 4 onclick='checkOnlyOne4(this)'>콘도미니엄/리조트<br>
+        						<input type='checkbox' name='sleepA6_9' value = 9 onclick='checkOnlyOne4(this)'>게스트하우스<br>
         						<br>
         						6. 여행 동반자 수(본인포함)<br>
         						<input type='text' name='countA7_1'><br>
         						<br>
         						7. 동반자 유형<br>
-        						<input type='checkbox' name='withA7' value = 1 onclick='checkOnlyOne5(this)'>가족(부모, 배우자, 자녀, 형제)<br>
-        						<input type='checkbox' name='withA7' value = 2 onclick='checkOnlyOne5(this)'>친적<br>
-        						<input type='checkbox' name='withA7' value = 3 onclick='checkOnlyOne5(this)'>친구/연인<br>
-        						<input type='checkbox' name='withA7' value = 4 onclick='checkOnlyOne5(this)'>(직장)동료<br>
-        						<input type='checkbox' name='withA7' value = 5 onclick='checkOnlyOne5(this)'>친목 단체/모임(동호회, 종교단체 등)<br>
-        						<input type='checkbox' name='withA7' value = 6 onclick='checkOnlyOne5(this)'>학교 단체(소풍, 수학여행)<br>
-        						<input type='checkbox' name='withA7' value = 7 onclick='checkOnlyOne5(this)'>기타<br>
+        						<input type='checkbox' name='withA7_1' value = 1 onclick='checkOnlyOne5(this)'>가족(부모, 배우자, 자녀, 형제)<br>
+        						<input type='checkbox' name='withA7_2' value = 2 onclick='checkOnlyOne5(this)'>친적<br>
+        						<input type='checkbox' name='withA7_3' value = 3 onclick='checkOnlyOne5(this)'>친구/연인<br>
+        						<input type='checkbox' name='withA7_4' value = 4 onclick='checkOnlyOne5(this)'>(직장)동료<br>
+        						<input type='checkbox' name='withA7_5' value = 5 onclick='checkOnlyOne5(this)'>친목 단체/모임(동호회, 종교단체 등)<br>
+        						<input type='checkbox' name='withA7_6' value = 6 onclick='checkOnlyOne5(this)'>학교 단체(소풍, 수학여행)<br>
+        						<input type='checkbox' name='withA7_7' value = 7 onclick='checkOnlyOne5(this)'>기타<br>
         						<br>
         						8. 예상 여행비 총합<br>
         						<input type='text' name='costA10'><br>

@@ -24,14 +24,13 @@ def main():
 
     print(train_data.shape, x_train.shape, x_test.shape)
 
-    forest = RandomForestClassifier(n_estimators=3000,random_state=156)
+    forest = RandomForestClassifier(n_estimators=1000, random_state=156, max_depth=20)
+    forest.fit(x_train, y_train)
+    #y_predict = forest.predict(x_test)
 
-    best_forest = grid_cv.best_estimator
-    best_y_predict = best_forest.predict(x_test)
-    best_accuracy = accuracy_score(y_test, best_y_predict)
-    print('best 결정 트리 예측 정확도 : {0:.4f}'.format(best_accuracy))
-    
-    
 
+    #accuracy = accuracy_score(y_test, y_predict)
+    #print('결정 트리 예측 정확도 : {0:.4f}'.format(accuracy))
+    
 if __name__== "__main__":
     main()

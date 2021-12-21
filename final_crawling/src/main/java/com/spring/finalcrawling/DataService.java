@@ -16,7 +16,12 @@ public class DataService implements IDataService {
 	@Override
 	public String dataSend(DataVO vo) {
 		
-		String data = vo.toString();
+		String start_mon = Integer.toString(vo.getStartDate()).substring(0, 2);
+		String start_day = Integer.toString(vo.getStartDate()).substring(2);
+		String end_mon = Integer.toString(vo.getEndDate()).substring(0, 2);
+		String end_day = Integer.toString(vo.getEndDate()).substring(2);
+		String data = start_mon +","+ start_day +","+ end_mon +","+end_day +","+ vo.toString();
+
 		Socket socket;
 		String ip = "127.0.0.1";
 		int port = 5000;
