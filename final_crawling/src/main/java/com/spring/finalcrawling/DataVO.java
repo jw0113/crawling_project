@@ -2,11 +2,8 @@ package com.spring.finalcrawling;
 
 public class DataVO {
 
-	
-	private int startMon;
-	private int startDay;
-	private int endMon;
-	private int endDay;
+	private int startDate;
+	private int endDate;
 	private int importA2;
 	private int playA3;
 	private int trafficA5;
@@ -16,29 +13,19 @@ public class DataVO {
 	private int costA10;
 	private int gender;
 	private int age;
-	public int getStartMon() {
-		return startMon;
+
+	public int getStartDate() {
+		return startDate;
 	}
-	public void setStartMon(int startMon) {
-		this.startMon = startMon;
+	public void setStartDate(int startDate) {
+		this.startDate = startDate;
 	}
-	public int getStartDay() {
-		return startDay;
+
+	public int getEndDate() {
+		return endDate;
 	}
-	public void setStartDay(int startDay) {
-		this.startDay = startDay;
-	}
-	public int getEndMon() {
-		return endMon;
-	}
-	public void setEndMon(int endMon) {
-		this.endMon = endMon;
-	}
-	public int getEndDay() {
-		return endDay;
-	}
-	public void setEndDay(int endDay) {
-		this.endDay = endDay;
+	public void setEndDate(int endDate) {
+		this.endDate = endDate;
 	}
 	public int getImportA2() {
 		return importA2;
@@ -94,13 +81,15 @@ public class DataVO {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
 	@Override
 	public String toString() {
-		return "DataVO [startMon=" + startMon + ", startDay=" + startDay + ", endMon=" + endMon + ", endDay=" + endDay
-				+ ", importA2=" + importA2 + ", playA3=" + playA3 + ", trafficA5=" + trafficA5 + ", sleepA6=" + sleepA6
-				+ ", countA7_1=" + countA7_1 + ", withA7=" + withA7 + ", costA10=" + costA10 + ", gender=" + gender
-				+ ", age=" + age + "]";
+		return startDate + "," + endDate + "," + importA2 + ","
+				+ playA3 + "," + trafficA5 + "," + sleepA6 + "," + countA7_1
+				+ "," + withA7 + "," + costA10 + "," + gender + "," + age;
 	}
+	
+	
 	
 	
 }

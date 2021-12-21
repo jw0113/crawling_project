@@ -37,13 +37,13 @@
                  	dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], 
                  	monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
                  	monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-                 	dateFormat: "yymmdd",
+                 	dateFormat: "mmdd",
                  	maxDate: 0,                       // 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 불가)
                  	onClose: function( selectedDate ) {    
                       	//시작일(startDate) datepicker가 닫힐때
                       	//종료일(endDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정
                      	$("#endDate").datepicker( "option", "minDate", selectedDate );
-                 	}    
+                 	}
  
             	});
             	$( "#endDate" ).datepicker({
@@ -55,7 +55,7 @@
                  	dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], 
                  	monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
                  	monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-                 	dateFormat: "yymmdd",
+                 	dateFormat: "mmdd",
                  	maxDate: 0,                       // 선택할수있는 최대날짜, ( 0 : 오늘 이후 날짜 선택 불가)
                  	onClose: function( selectedDate ) {    
                      	// 종료일(endDate) datepicker가 닫힐때
@@ -66,14 +66,63 @@
             	});    
     		});
 
-    		function checkOnlyOne(element){
-        		const check = document.getElementsByName("");
+    		function checkOnlyOne1(element){
+        		
+        		const check = document.getElementsByName("importA2");
         		check.forEach((cb) => {
             		cb.checked = false;	
             	})
             	element.checked = true;
         	}
-    		
+
+			function checkOnlyOne2(element){
+        		
+        		const check = document.getElementsByName("playA3");
+        		check.forEach((cb) => {
+            		cb.checked = false;	
+            	})
+            	element.checked = true;
+        	}
+			function checkOnlyOne3(element){
+        		
+        		const check = document.getElementsByName("trafficA5");
+        		check.forEach((cb) => {
+            		cb.checked = false;	
+            	})
+            	element.checked = true;
+        	}
+			function checkOnlyOne4(element){
+        		
+        		const check = document.getElementsByName("sleepA6");
+        		check.forEach((cb) => {
+            		cb.checked = false;	
+            	})
+            	element.checked = true;
+        	}
+			function checkOnlyOne5(element){
+        		
+        		const check = document.getElementsByName("withA7");
+        		check.forEach((cb) => {
+            		cb.checked = false;	
+            	})
+            	element.checked = true;
+        	}
+			function checkOnlyOne6(element){
+        		
+        		const check = document.getElementsByName("gender");
+        		check.forEach((cb) => {
+            		cb.checked = false;	
+            	})
+            	element.checked = true;
+        	}
+			function checkOnlyOne7(element){
+        		
+        		const check = document.getElementsByName("age");
+        		check.forEach((cb) => {
+            		cb.checked = false;	
+            	})
+            	element.checked = true;
+        	}
 		</script>
 
 
@@ -112,80 +161,80 @@
         				</div>
         				-->
         				<div class="d-flex h-100 text-white-50">
-        					<form action="/dataget" method="post">
+        					<form action="/finalcrawling/dataget" method="post">
         						1. 여행 일자<br>
-        						<input type="text" id="startDate"> <input type="text" id="endDate">
+        						<input type="text" id="startDate" name = 'startDay'> <input type="text" id="endDate" name = 'endDay'>
         						<br><br>
         						2. 여행지 선택시 가장 중요시 생각하는 것<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>여행지 지명도<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>볼거리 제공<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>저렴한 여행경비<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>이동거리<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>여행할 수 있는 시간<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>숙박시설<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>쇼핑<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>음식<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>교통편<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>체험프로그램 유무<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>경험자의 추천<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>관광지의 편의시설<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>교육성(교육적 측면)<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>여행동반자유형<br>
-        						<input type='checkbox' name='A2' onclick='checkOnlyOne(this)'>기타<br>
+        						<input type='checkbox' name='importA2' value = 1 onclick='checkOnlyOne1(this)'>여행지 지명도<br>
+        						<input type='checkbox' name='importA2' value = 2 onclick='checkOnlyOne1(this)'>볼거리 제공<br>
+        						<input type='checkbox' name='importA2' value = 3 onclick='checkOnlyOne1(this)'>저렴한 여행경비<br>
+        						<input type='checkbox' name='importA2' value = 4 onclick='checkOnlyOne1(this)'>이동거리<br>
+        						<input type='checkbox' name='importA2' value = 5 onclick='checkOnlyOne1(this)'>여행할 수 있는 시간<br>
+        						<input type='checkbox' name='importA2' value = 6 onclick='checkOnlyOne1(this)'>숙박시설<br>
+        						<input type='checkbox' name='importA2' value = 7 onclick='checkOnlyOne1(this)'>쇼핑<br>
+        						<input type='checkbox' name='importA2' value = 8 onclick='checkOnlyOne1(this)'>음식<br>
+        						<input type='checkbox' name='importA2' value = 9 onclick='checkOnlyOne1(this)'>교통편<br>
+        						<input type='checkbox' name='importA2' value = 10 onclick='checkOnlyOne1(this)'>체험프로그램 유무<br>
+        						<input type='checkbox' name='importA2' value = 11 onclick='checkOnlyOne1(this)'>경험자의 추천<br>
+        						<input type='checkbox' name='importA2' value = 12 onclick='checkOnlyOne1(this)'>관광지의 편의시설<br>
+        						<input type='checkbox' name='importA2' value = 13 onclick='checkOnlyOne1(this)'>교육성(교육적 측면)<br>
+        						<input type='checkbox' name='importA2' value = 14 onclick='checkOnlyOne1(this)'>여행동반자유형<br>
+        						<input type='checkbox' name='importA2' value = 15 onclick='checkOnlyOne1(this)'>기타<br>
         						<br>
         						3. 원하는 여행 유형<br>
-        						<input type='checkbox' name='A3' onclick='checkOnlyOne(this)'>자연 및 풍경 감상(힐링)<br>
-        						<input type='checkbox' name='A3' onclick='checkOnlyOne(this)'>음식 관광<br>
-        						<input type='checkbox' name='A3' onclick='checkOnlyOne(this)'>야외활동<br>
-        						<input type='checkbox' name='A3' onclick='checkOnlyOne(this)'>쇼핑<br>
-        						<input type='checkbox' name='A3' onclick='checkOnlyOne(this)'>지역 문화 예술 및 공연/콘서트/전시 관람<br>
-        						<input type='checkbox' name='A3' onclick='checkOnlyOne(this)'>지역 축제 및 이벤트 참가<br>
+        						<input type='checkbox' name='playA3' value = 1 onclick='checkOnlyOne2(this)'>자연 및 풍경 감상(힐링)<br>
+        						<input type='checkbox' name='playA3' value = 2 onclick='checkOnlyOne2(this)'>음식 관광<br>
+        						<input type='checkbox' name='playA3' value = 3 onclick='checkOnlyOne2(this)'>야외활동<br>
+        						<input type='checkbox' name='playA3' value = 8 onclick='checkOnlyOne2(this)'>쇼핑<br>
+        						<input type='checkbox' name='playA3' value = 9 onclick='checkOnlyOne2(this)'>지역 문화 예술 및 공연/콘서트/전시 관람<br>
+        						<input type='checkbox' name='playA3' value = 11 onclick='checkOnlyOne2(this)'>지역 축제 및 이벤트 참가<br>
         						<br>
         						4. 주요 이동 교통 수단<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>자가용<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>철도<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>항공기<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>선박/해상 교통<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>지하철<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>고속/시외/시내 버스<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>차량대여/렌트<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>자전거<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>택시<br>
-        						<input type='checkbox' name='A5' onclick='checkOnlyOne(this)'>기타<br>
+        						<input type='checkbox' name='trafficA5' value = 1 onclick='checkOnlyOne3(this)'>자가용<br>
+        						<input type='checkbox' name='trafficA5' value = 2 onclick='checkOnlyOne3(this)'>철도<br>
+        						<input type='checkbox' name='trafficA5' value = 3 onclick='checkOnlyOne3(this)'>항공기<br>
+        						<input type='checkbox' name='trafficA5' value = 4 onclick='checkOnlyOne3(this)'>선박/해상 교통<br>
+        						<input type='checkbox' name='trafficA5' value = 5 onclick='checkOnlyOne3(this)'>지하철<br>
+        						<input type='checkbox' name='trafficA5' value = 6 onclick='checkOnlyOne3(this)'>고속/시외/시내 버스<br>
+        						<input type='checkbox' name='trafficA5' value = 8 onclick='checkOnlyOne3(this)'>차량대여/렌트<br>
+        						<input type='checkbox' name='trafficA5' value = 9 onclick='checkOnlyOne3(this)'>자전거<br>
+        						<input type='checkbox' name='trafficA5' value = 10 onclick='checkOnlyOne3(this)'>택시<br>
+        						<input type='checkbox' name='trafficA5' value = 11 onclick='checkOnlyOne3(this)'>기타<br>
         						<br>
         						5. 숙박 시설<br>
-        						<input type='checkbox' name='A6' onclick='checkOnlyOne(this)'>호텔<br>
-        						<input type='checkbox' name='A6' onclick='checkOnlyOne(this)'>펜션<br>
-        						<input type='checkbox' name='A6' onclick='checkOnlyOne(this)'>콘도미니엄/리조트<br>
-        						<input type='checkbox' name='A6' onclick='checkOnlyOne(this)'>게스트하우스<br>
+        						<input type='checkbox' name='sleepA6' value = 1 onclick='checkOnlyOne4(this)'>호텔<br>
+        						<input type='checkbox' name='sleepA6' value = 3 onclick='checkOnlyOne4(this)'>펜션<br>
+        						<input type='checkbox' name='sleepA6' value = 4 onclick='checkOnlyOne4(this)'>콘도미니엄/리조트<br>
+        						<input type='checkbox' name='sleepA6' value = 9 onclick='checkOnlyOne4(this)'>게스트하우스<br>
         						<br>
         						6. 여행 동반자 수(본인포함)<br>
-        						<input type='text' name='A7_1'><br>
+        						<input type='text' name='countA7_1'><br>
         						<br>
         						7. 동반자 유형<br>
-        						<input type='checkbox' name='A7' onclick='checkOnlyOne(this)'>가족(부모, 배우자, 자녀, 형제)<br>
-        						<input type='checkbox' name='A7' onclick='checkOnlyOne(this)'>친적<br>
-        						<input type='checkbox' name='A7' onclick='checkOnlyOne(this)'>친구/연인<br>
-        						<input type='checkbox' name='A7' onclick='checkOnlyOne(this)'>(직장)동료<br>
-        						<input type='checkbox' name='A7' onclick='checkOnlyOne(this)'>친목 단체/모임(동호회, 종교단체 등)<br>
-        						<input type='checkbox' name='A7' onclick='checkOnlyOne(this)'>학교 단체(소풍, 수학여행)<br>
-        						<input type='checkbox' name='A7' onclick='checkOnlyOne(this)'>기타<br>
+        						<input type='checkbox' name='withA7' value = 1 onclick='checkOnlyOne5(this)'>가족(부모, 배우자, 자녀, 형제)<br>
+        						<input type='checkbox' name='withA7' value = 2 onclick='checkOnlyOne5(this)'>친적<br>
+        						<input type='checkbox' name='withA7' value = 3 onclick='checkOnlyOne5(this)'>친구/연인<br>
+        						<input type='checkbox' name='withA7' value = 4 onclick='checkOnlyOne5(this)'>(직장)동료<br>
+        						<input type='checkbox' name='withA7' value = 5 onclick='checkOnlyOne5(this)'>친목 단체/모임(동호회, 종교단체 등)<br>
+        						<input type='checkbox' name='withA7' value = 6 onclick='checkOnlyOne5(this)'>학교 단체(소풍, 수학여행)<br>
+        						<input type='checkbox' name='withA7' value = 7 onclick='checkOnlyOne5(this)'>기타<br>
         						<br>
         						8. 예상 여행비 총합<br>
-        						<input type='text' name='A10'><br>
+        						<input type='text' name='costA10'><br>
         						<br>
         						9. 성별<br>
-        						<input type='checkbox' name='gender' onclick='checkOnlyOne(this)'>남자<br>
-        						<input type='checkbox' name='gender' onclick='checkOnlyOne(this)'>여자<br>
+        						<input type='checkbox' name='gender' value = 1 onclick='checkOnlyOne6(this)'>남자<br>
+        						<input type='checkbox' name='gender' value = 2 onclick='checkOnlyOne6(this)'>여자<br>
         						<br>
         						10. 나이<br>
-        						<input type='checkbox' name='age' onclick='checkOnlyOne(this)'>15~19세<br>
-        						<input type='checkbox' name='age' onclick='checkOnlyOne(this)'>20대<br>
-        						<input type='checkbox' name='age' onclick='checkOnlyOne(this)'>30대<br>
-        						<input type='checkbox' name='age' onclick='checkOnlyOne(this)'>40대<br>
-        						<input type='checkbox' name='age' onclick='checkOnlyOne(this)'>50대<br>
-        						<input type='checkbox' name='age' onclick='checkOnlyOne(this)'>60대<br>
-        						<input type='checkbox' name='age' onclick='checkOnlyOne(this)'>70대 이상<br>
+        						<input type='checkbox' name='age' value = 1 onclick='checkOnlyOne7(this)'>15~19세<br>
+        						<input type='checkbox' name='age' value = 2 onclick='checkOnlyOne7(this)'>20대<br>
+        						<input type='checkbox' name='age' value = 3 onclick='checkOnlyOne7(this)'>30대<br>
+        						<input type='checkbox' name='age' value = 4 onclick='checkOnlyOne7(this)'>40대<br>
+        						<input type='checkbox' name='age' value = 5 onclick='checkOnlyOne7(this)'>50대<br>
+        						<input type='checkbox' name='age' value = 6 onclick='checkOnlyOne7(this)'>60대<br>
+        						<input type='checkbox' name='age' value = 7 onclick='checkOnlyOne7(this)'>70대 이상<br>
         						<br>
         						<input type='submit'>
         						
