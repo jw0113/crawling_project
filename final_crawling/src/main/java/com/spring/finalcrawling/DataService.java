@@ -6,10 +6,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DataService implements IDataService {
+	
+	@Autowired
+	private IDataMapper mapper;
 
 	
 	// 사용자의 정보를 받으면 해당 값을 python파일로 전송

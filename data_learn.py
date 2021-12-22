@@ -9,7 +9,7 @@ def main(data):
 
 
     # 파일 읽어오기
-    data_file = pd.read_excel("C:\\Users\\jiwoo\\Desktop\\university\\crawling_data\\final_data.xlsx")
+    data_file = pd.read_excel("C:\\Users\\jiwoo\\Git\\datacrawling_project\\final_data.xlsx")
     data_file = data_file.fillna(0)
     data_file.head()
 
