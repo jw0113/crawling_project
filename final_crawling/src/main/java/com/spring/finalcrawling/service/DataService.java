@@ -1,13 +1,18 @@
-package com.spring.finalcrawling;
+package com.spring.finalcrawling.service;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.spring.finalcrawling.model.DataVO;
+import com.spring.finalcrawling.model.DbdataVO;
+import com.spring.finalcrawling.repository.IDataMapper;
 
 @Service
 public class DataService implements IDataService {
@@ -77,5 +82,43 @@ public class DataService implements IDataService {
 			System.out.println("Connect Fail");
 			e.printStackTrace();
 			return "fail";}
+	}
+	
+	
+	// 해당 시의 db에서 선택한 여행 유형 정보 가져오기
+	@Override
+	public List<DbdataVO> selectLocation(DataVO vo, String result){
+		
+		String si_index[] = new String[] { "11.0","21.0","22.0","23.0","25.0","24.0","26.0","31.0","32.0","33.0","34.0","37.0","38.0","35.0","36.0","39.0"};
+		String si_name[] = new String[] {"seoul", "busan","daegu","incheon","daejeon","gwangju","ulsan","gyeonggi_do","gangwon_do","chungcheongbuk_do","chungcheongnam_do","gyeongsangbuk_do","gyeongsangnam_do","jeollabuk_do","jeollanam_no","jeju_island"};
+		
+		String si_dbname = null;
+		// 어떤 시로 나왔는지
+		for(int i=0; i<si_index.length;i++) {
+			if(si_index[i].equals(result)) {
+				si_dbname = si_name[i];
+			}
+		}
+		System.out.println("si_dbname : " + si_dbname);
+		
+		int num = 0;
+		// 어떤 여행 유형을 선택했는지
+		if(vo.getPlayA3_1() != 0) {
+			num = 1;
+		}
+		else if(vo.getPlayA3_3() != 0) {
+			num = 2;
+		}
+		else if(vo.getPlayA3_9() != 0) { 
+			num = 3;
+		}
+		else if(vo.getPlayA3_2() != 0) {
+			num = 4;
+		}
+		else if(vo.getPlayA3_8() != 0) {
+			num = 5;
+		}
+		
+		return mapper.selectLocation(si_dbname,num);
 	}
 }

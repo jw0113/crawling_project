@@ -1,4 +1,4 @@
-package com.spring.finalcrawling;
+package com.spring.finalcrawling.model;
 
 public class DataVO {
 

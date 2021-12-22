@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.spring.finalcrawling.IDataMapper">
+<mapper namespace="com.spring.finalcrawling.repository.IDataMapper">
 
+	<!-- DB컬럼명과 VO클래스의 필드명 매핑 작업 -->
+	<resultMap type="com.spring.finalcrawling.model.DbdataVO" id="dataMap">
+		<id property="index" column="index" />
+		<result property="location" column="location" />
+		<result property="category" column="category" />
+		<result property="title" column="title" />
+	</resultMap>
+
+	
+
+	<!-- 여행 유형 별 정보 가져오기 -->
+	<select id="selectLocation" resultMap="dataMap">
+		SELECT *
+		FROM ${dbname}
+		WHERE `category` = #{category}
+	</select>
+	
 
 
 </mapper>
