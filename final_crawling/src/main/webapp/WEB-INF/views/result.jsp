@@ -60,7 +60,13 @@
         		</div>
         		<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
         			<div class="col-lg-6">
-        				<h4 class="text-white"></h4>
+        				<h4 class="text-white">추천 여행지 : ${dbdata[0].location} </h4>
+        					<c:forEach var="a" items="${dbdata}" varStatus="status">
+        					
+        						<p class="text-white"> ${a.title}</p>
+        						<img src="./resources/img/${si}/${status.count}.jpg">
+        					</c:forEach>
+        				
         				<!-- 
         				<div class="d-flex h-100" style="overflow:scroll; flex-direction : column; flex-wrap : wrap; word-break : break-all; hight:100%;">
         					<p class="mb-0 text-white-50">data</p>
