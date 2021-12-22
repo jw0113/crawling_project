@@ -20,7 +20,7 @@ public class DataService implements IDataService {
 		String start_day = Integer.toString(vo.getStartDate()).substring(2);
 		String end_mon = Integer.toString(vo.getEndDate()).substring(0, 2);
 		String end_day = Integer.toString(vo.getEndDate()).substring(2);
-		String data = start_mon +","+ start_day +","+ end_mon +","+end_day +","+ vo.toString();
+		String data = Integer.toString(0) + "," +start_mon +","+ start_day +","+ end_mon +","+end_day +","+ vo.toString();
 
 		Socket socket;
 		String ip = "127.0.0.1";
@@ -45,21 +45,25 @@ public class DataService implements IDataService {
 			bufferout.flush();
 			System.out.println("success");
 			
+			byte[] in = new byte[9999];
 			String python_result = "";
+			int a;
 			while(true) {
+				a = bufferin.read();
 				
-				if (bufferin.read() > 0) {
-					byte[] in = new byte[1024];
-					python_result += new String(in,0,bufferin.read(in));
+				if (a > 0) {
+					
+					python_result += new String(in,0,a);
 
 				}
 				
 				// server에서 모든 코드를 보냈다면 while문 종료
-				if (bufferin.read() <0) {
+				if (a <0) {
 					break;
 				}
 			}
-
+			
+			System.out.println("받아온 파일 : " + python_result);
 			bufferout.close();
 			bufferin.close();
 			socket.close();

@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score
 
-def main():
+def main(data):
 
 
     # 파일 읽어오기
@@ -26,11 +26,10 @@ def main():
 
     forest = RandomForestClassifier(n_estimators=1000, random_state=156, max_depth=20)
     forest.fit(x_train, y_train)
-    #y_predict = forest.predict(x_test)
+    y_predict = forest.predict(data)
+    return y_predict
 
 
     #accuracy = accuracy_score(y_test, y_predict)
     #print('결정 트리 예측 정확도 : {0:.4f}'.format(accuracy))
     
-if __name__== "__main__":
-    main()

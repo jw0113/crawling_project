@@ -14,8 +14,6 @@ from sklearn.ensemble import RandomForestClassifier
 
 def main():
 
-    data_learn.main()
-    
     # spring과의 소켓 통신을 위함
     host = "127.0.0.1"
     port = 5000
@@ -30,19 +28,25 @@ def main():
     # spring에서 보낸 정보 받기
     data = client_sock.recv(2048)
     data = data.decode('utf-8').split(',')
-    print(type(data))
-    #with open("C:\\Users\\jiwoo\\Desktop\\university\\crawling_data\\data.csv",'w', newline='') as f:
-        #wr = csv.writer(f)
-        #wr.writerow(data)
-
-    #x_test = pd.read_csv("C:\\Users\\jiwoo\\Desktop\\university\\crawling_data\\data.csv")
-    x_test = pd.DataFrame(data)
+    #print(type(data))
+    x_test = pd.DataFrame([data])
     print(x_test)
     # 예측 진행
     #best_forest = grid_cv.best_estimator_
     #best_y_predict = best_forest.predict(data)
-    print(best_y_predict)
-    
+    y_predict = data_learn.main(x_test)
+    print(type(y_predict))
+    re = y_predict[0]
+    print(re)
+    print(type(re))
+
+    # 값 보내기
+    client_sock.send(re.tobytes())
+    print(y_predict.tobytes())
+    print(re.tobytes())
+
+    client_sock.close()
+    server.close()
     
 
 if __name__ == "__main__":
