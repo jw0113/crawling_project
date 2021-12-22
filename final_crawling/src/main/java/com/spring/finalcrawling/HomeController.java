@@ -30,12 +30,15 @@ public class HomeController {
 	
 	// 사용자 정보를 받음
 	@RequestMapping(value = "/dataget", method = RequestMethod.POST)
-	public void dataget(DataVO vo) {
+	public String dataget(DataVO vo, Model model) {
 		
 		System.out.println("vo : " + vo.toString());
 		
 		// 사용자 정보를 보내기
 		String result = idataservice.dataSend(vo);
+		model.addAttribute("si", result);
+		
+		return "result";
 		
 	}
 	
