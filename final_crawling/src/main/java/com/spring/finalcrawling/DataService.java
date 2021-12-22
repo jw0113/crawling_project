@@ -45,16 +45,15 @@ public class DataService implements IDataService {
 			bufferout.flush();
 			System.out.println("success");
 			
-			byte[] in = new byte[9999];
+			byte[] in = new byte[1024];
 			String python_result = "";
 			int a;
 			while(true) {
-				a = bufferin.read();
+				a = bufferin.read(in);
+				//System.out.println("aaa : " + a);
 				
-				if (a > 0) {
-					
+				if (a > 0) {					
 					python_result += new String(in,0,a);
-
 				}
 				
 				// server에서 모든 코드를 보냈다면 while문 종료

@@ -7,6 +7,7 @@ import socket
 import importlib.util
 import numpy as np
 import pandas as pd
+import struct
 
 import data_learn
 from sklearn.ensemble import RandomForestClassifier
@@ -36,14 +37,13 @@ def main():
     #best_y_predict = best_forest.predict(data)
     y_predict = data_learn.main(x_test)
     print(type(y_predict))
-    re = y_predict[0]
-    print(re)
-    print(type(re))
+    y_predict = y_predict.tolist()
+    a = str(y_predict[0])
 
     # 값 보내기
-    client_sock.send(re.tobytes())
-    print(y_predict.tobytes())
-    print(re.tobytes())
+    client_sock.send(a.encode('utf-8'))
+    print(bytearray(struct.pack("f",y_predict[0])))
+    #print(type(y_predict[0].to_bytes(10, byteorder='little')))
 
     client_sock.close()
     server.close()
